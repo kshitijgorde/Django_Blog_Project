@@ -19,7 +19,7 @@ class Post(models.Model):
         self.save()
 
     def approve_comments(self):
-        ''' The Blog User can approve the comments first, only then they can appear in the post '''
+        ''' The Blog User can approve the comments first, only then they can appear in the post. '''
         return self.comments.filter(approved_comments = True) #Filter comments which are True
 
     def get_absolute_url(self):
