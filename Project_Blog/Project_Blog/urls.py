@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blog_app import views
+from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', views.AboutView.as_view, name = 'about'),
+    url(r'account/login/$', views.login, name = 'login'),
+    url(r'account/logout/$', views.logout, name = 'logout', kwargs = {'next_page':'/'}), #After log out wherever to redirect
 ]
