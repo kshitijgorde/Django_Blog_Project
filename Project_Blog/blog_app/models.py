@@ -20,7 +20,7 @@ class Post(models.Model):
 
     def approve_comments(self):
         ''' The Blog User can approve the comments first, only then they can appear in the post. '''
-        return self.comments.filter(approved_comments = True) #Filter comments which are True
+        return self.comments.filter(approved_comment = True) #Filter comments which are True
 
     def get_absolute_url(self):
         # Let's go back to the blog details page after creating one.

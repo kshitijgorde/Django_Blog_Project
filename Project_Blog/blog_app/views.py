@@ -49,7 +49,7 @@ class DraftListView(LoginRequiredMixin, ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull = True).order_by('created_date')
+        return Post.objects.filter(published_date__isnull = True).order_by('create_date')
 #####################################################################################################
 
 #                   Function-based views
@@ -73,7 +73,7 @@ def add_comment_to_post(request, pk):
 
 @login_required
 def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk)
+    comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
 
     return redirect('post_detail', pk = comment.post.pk)
