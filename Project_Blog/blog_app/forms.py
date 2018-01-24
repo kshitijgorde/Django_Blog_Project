@@ -17,7 +17,7 @@ class PostForm(forms.ModelForm):
         'class' : 'editable medium-editor-textarea postcontent'
         })}
 
-class CommentForm(models.ModelForm):
+class CommentForm(forms.ModelForm):
     ''' Form Class for comment inputs '''
 
     class Meta():
